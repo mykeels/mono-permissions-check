@@ -8,5 +8,9 @@ module.exports = {
   variants: {
     extend: {},
   },
+  fontFamily: {
+    sans: ["Alegreya Sans", "sans-serif"],
+    mono: ["DM Sans", "sans-serif"]
+  },
   plugins: [],
 };
