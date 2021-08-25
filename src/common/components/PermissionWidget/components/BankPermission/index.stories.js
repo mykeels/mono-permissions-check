@@ -14,6 +14,7 @@ export const Expanded = () => {
   return (
     <BankPermission
       bankName="GTBank"
+      bankImageUrl="images/banks/gtb.svg"
       expanded={expanded}
       onExpandChange={() => setExpanded(!expanded)}
     />
@@ -25,7 +26,8 @@ export const Collapsed = () => {
 
   return (
     <BankPermission
-      bankName="GTBank"
+      bankName="Zenith Bank"
+      bankImageUrl="images/banks/zenith.svg"
       expanded={expanded}
       onExpandChange={() => setExpanded(!expanded)}
     />

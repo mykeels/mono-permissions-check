@@ -3,7 +3,6 @@ import "./style.css";
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import bankSVG from "../../../../../assets/images/banks/gtb.svg";
 import chevronUpSVG from "./assets/images/chevron-up.svg";
 import chevronDownSVG from "./assets/images/chevron-down.svg";
 
@@ -13,10 +12,12 @@ import chevronDownSVG from "./assets/images/chevron-down.svg";
  * @param {string|boolean} props.expanded
  * @param {(expanded: string) => any} props.onExpandChange
  * @param {string} props.bankName
+ * @param {string} props.bankImageUrl
  */
 export const BankPermission = ({
   className,
   bankName,
+  bankImageUrl,
   expanded,
   onExpandChange,
 }) => {
@@ -31,7 +32,7 @@ export const BankPermission = ({
         onClick={() => onExpandChange(bankName)}
       >
         <div className="inline-block w-5/6 align-top">
-          <img className="inline" src={bankSVG} alt="Bank" />
+          <img className="inline" src={bankImageUrl} alt="Bank" />
           <span className="px-2 pl-2">{bankName}</span>
         </div>
         <div className="inline-block w-1/6 align-top text-right">
@@ -69,6 +70,7 @@ BankPermission.propTypes = {
   expanded: PropTypes.oneOf(PropTypes.bool, PropTypes.string),
   onExpandChange: PropTypes.func,
   bankName: PropTypes.string,
+  bankImageUrl: PropTypes.string
 };
 
 BankPermission.defaultProps = {
