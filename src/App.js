@@ -7,15 +7,14 @@ function App() {
     <div className="bg-m-blue-400 min-h-screen bg-robot-image">
       <Nav />
       <div className="block text-white">
-        <div className="inline-block w-1/2 align-top">
+        <div className="inline-block w-full lg:w-1/2 align-top">
           <h1
-            className="text-5xl font-sans py-24 px-12 leading-snug font-semibold"
-            style={{ maxWidth: "32rem" }}
+            className="text-3xl lg:text-5xl font-sans py-2 lg:py-24 px-12 leading-snug font-semibold w-full lg:w-128"
           >
             Give Floof access to your financial data
           </h1>
         </div>
-        <div className="inline-block w-1/2 align-top text-gray-800 py-8 font-mono text-center">
+        <div className="inline-block w-full lg:w-1/2 align-top text-gray-800 px-4 sm:px-8 md:px-24 lg:px-0 py-8 font-mono text-center">
           <PermissionWidget />
           <div className="py-4">
             <span className="inline-block text-white bg-m-blue-500 px-2 py-1 rounded">

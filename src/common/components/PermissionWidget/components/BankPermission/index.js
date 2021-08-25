@@ -54,7 +54,7 @@ export const BankPermission = ({
             <li className="list-check py-1">Account transaction history</li>
             <li className="list-check py-1">Account balance</li>
           </ul>
-          <div className="text-right">
+          <div className="text-right py-2">
             <a href="/#" className="bg-m-blue-700 text-white px-6 py-2 rounded">
               More info
             </a>
