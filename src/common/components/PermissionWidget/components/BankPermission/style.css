@@ -1,0 +1,6 @@
+li.list-check:before {
+  content: "✔";
+  display: inline-block;
+  width: 2em;
+  color: #60A944;
+}

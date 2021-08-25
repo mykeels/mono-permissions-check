@@ -10,17 +10,21 @@ module.exports = {
           700: "#0055BA"
         },
         "m-gray": {
-          400: "#D9E3EF"
+          400: "#D9E3EF",
+          500: "#E2E6EC"
+        },
+        "m-green": {
+          400: "#60A944"
         }
       }
+    },
+    fontFamily: {
+      sans: ["Alegreya Sans", "sans-serif"],
+      mono: ["DM Sans", "sans-serif"]
     },
   },
   variants: {
     extend: {},
-  },
-  fontFamily: {
-    sans: ["Alegreya Sans", "sans-serif"],
-    mono: ["DM Sans", "sans-serif"]
   },
   plugins: [],
 };
