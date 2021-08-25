@@ -70,8 +70,10 @@
     "autoprefixer": "9",
     "copy-webpack-plugin": "^9.0.1",
     "cross-env": "^7.0.3",
+    "css-loader": "^6.2.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",
+    "sass-loader": "^12.1.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }

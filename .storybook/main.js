@@ -9,8 +9,10 @@ module.exports = {
   ],
   webpackFinal: async (config) => {
     config.module.rules.push({
-      test: /\,css&/,
+      test:  /\.s[ac]ss$/i,
       use: [
+        "sass-loader",
+        "css-loader",
         {
           loader: "postcss-loader",
           options: {
