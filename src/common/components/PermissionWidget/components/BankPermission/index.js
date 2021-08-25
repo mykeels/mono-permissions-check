@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import chevronUpSVG from "./assets/images/chevron-up.svg";
 import chevronDownSVG from "./assets/images/chevron-down.svg";
+import { StatementModal } from "../StatementModal";
 
 /**
  * @param {object} props
@@ -55,9 +56,7 @@ export const BankPermission = ({
             <li className="list-check py-1">Account balance</li>
           </ul>
           <div className="text-right py-2">
-            <a href="/#" className="bg-m-blue-700 text-white px-6 py-2 rounded">
-              More info
-            </a>
+            <StatementModal />
           </div>
         </div>
       ) : null}
@@ -67,10 +66,10 @@ export const BankPermission = ({
 
 BankPermission.propTypes = {
   className: PropTypes.any,
-  expanded: PropTypes.oneOf(PropTypes.bool, PropTypes.string),
+  expanded: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   onExpandChange: PropTypes.func,
   bankName: PropTypes.string,
-  bankImageUrl: PropTypes.string
+  bankImageUrl: PropTypes.string,
 };
 
 BankPermission.defaultProps = {
