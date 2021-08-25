@@ -9,13 +9,13 @@ import { PermissionList, PermissionSearch } from "./components";
  */
 export const PermissionWidget = ({ className }) => {
   const permissionsClassName = classnames(
-    "bg-m-gray-400 py-1 px-4 rounded-3xl font-mono min-h-96",
+    "inline-block bg-m-gray-400 py-1 px-4 rounded-3xl font-mono min-h-96 text-left md:w-128",
     className
   );
 
   return (
     <div className={permissionsClassName}>
-      <div className>
+      <div>
         <PermissionSearch />
       </div>
       <div className="py-4 px-2">
