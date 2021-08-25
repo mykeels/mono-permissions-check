@@ -1,0 +1,17 @@
+.permissions-list-container {
+  height: 32rem;
+}
+
+.v-scroll {
+  scrollbar-color: white transparent;
+  scrollbar-width: thin;
+}
+
+.v-scroll::-webkit-scrollbar {
+  width: 4px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+.v-scroll::-webkit-scrollbar-thumb {
+  border-right: 4px solid white;
+}

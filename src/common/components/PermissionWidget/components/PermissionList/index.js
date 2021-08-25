@@ -1,3 +1,5 @@
+import "./style.css";
+
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
@@ -54,7 +56,7 @@ export const PermissionList = ({ className }) => {
 
   return (
     <div className={permissionsClassName}>
-      <ul>
+      <ul className="permissions-list-container v-scroll overflow-auto">
         {banks.map((bank) => (
           <li key={bank.name}>
             <BankPermission
