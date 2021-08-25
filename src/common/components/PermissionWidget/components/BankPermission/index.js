@@ -25,23 +25,25 @@ export const BankPermission = ({
 
   return (
     <div className={bpClassName}>
-      <div className="block py-2 border-b border-white">
+      <div
+        className="block py-2 border-b border-white"
+        role="button"
+        onClick={() => onExpandChange(bankName)}
+      >
         <div className="inline-block w-5/6 align-top">
           <img className="inline" src={bankSVG} alt="Bank" />
           <span className="px-2 pl-2">{bankName}</span>
         </div>
         <div className="inline-block w-1/6 align-top text-right">
-          <button onClick={() => onExpandChange(bankName)}>
-            {isExpanded ? (
-              <img className="inline" src={chevronUpSVG} alt="Collapse" />
-            ) : (
-              <img className="inline" src={chevronDownSVG} alt="Expand" />
-            )}
-          </button>
+          {isExpanded ? (
+            <img className="inline" src={chevronUpSVG} alt="Collapse" />
+          ) : (
+            <img className="inline" src={chevronDownSVG} alt="Expand" />
+          )}
         </div>
       </div>
       {isExpanded ? (
-        <div className="block">
+        <div className="block py-2">
           <p className="font-semibold py-2">
             Floof will be able to access your:
           </p>
@@ -67,4 +69,8 @@ BankPermission.propTypes = {
   expanded: PropTypes.oneOf(PropTypes.bool, PropTypes.string),
   onExpandChange: PropTypes.func,
   bankName: PropTypes.string,
+};
+
+BankPermission.defaultProps = {
+  onExpandChange: () => {},
 };

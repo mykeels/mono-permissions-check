@@ -16,7 +16,7 @@ export const PermissionSearch = ({ className }) => {
   return (
     <div className={permissionsClassName}>
       <div className="text-center font-semibold py-4">Choose your bank</div>
-      <div className="border border-white rounded py-2 px-4 bg-m-gray-500">
+      <div className="border border-white rounded py-2 px-4 bg-m-gray-500 shadow">
         <img src={magnifySVG} className="inline-block p-2 pointer-events-none" alt="Magnify" />
         <input
           type="search"
