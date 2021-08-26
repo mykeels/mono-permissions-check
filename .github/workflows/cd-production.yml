@@ -1,0 +1,49 @@
+name: Deploy App and Storybook
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./
+      ssh_key: ${{ secrets.STAGING_SSH_KEY }}
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: borales/actions-yarn@v2.0.0
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Retrieve app package version
+      run: |
+        echo ::set-env name=APP_PACKAGE_VERSION::$(node scripts/version.js)
+    - name: download app artifact
+      id: downloadAppArtifact
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        workflow: ci-app-build.yml
+        name: "app-${{env.APP_PACKAGE_VERSION}}"
+        path: app-dist/
+      continue-on-error: true
+    - name: download storybook artifact
+      id: downloadStorybookArtifact
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        workflow: ci-app-build-storybook.yml
+        name: "app-storybook-${{env.APP_PACKAGE_VERSION}}"
+        path: app-dist/storybook
+      continue-on-error: true
+    - name: Deploy App
+      if: steps.downloadAppArtifact.outcome != 'success'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./app-dist
