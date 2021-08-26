@@ -9,7 +9,7 @@ function App() {
       <div className="block text-white">
         <div className="inline-block w-full lg:w-1/2 align-top">
           <h1
-            className="text-3xl lg:text-5xl font-sans py-2 lg:py-24 px-12 leading-snug font-semibold w-full lg:w-128"
+            className="text-3xl lg:text-5xl font-sans py-2 lg:py-24 px-12 leading-snug lg:font-semibold w-full lg:w-128"
           >
             Give Floof access to your financial data
           </h1>
