@@ -17,11 +17,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: borales/actions-yarn@v2.0.0
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
     - name: Retrieve app package version
       run: |
         echo ::set-env name=APP_PACKAGE_VERSION::$(node scripts/version.js)
@@ -42,7 +37,7 @@ jobs:
         path: app-dist/storybook
       continue-on-error: true
     - name: Deploy App
-      if: steps.downloadAppArtifact.outcome != 'success'
+      if: steps.downloadAppArtifact.outcome == 'success'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
