@@ -34,3 +34,4 @@ jobs:
       working-directory: ${{env.working-directory}}
       env:
         CI: true
+        SKIP_PREFLIGHT_CHECK: true

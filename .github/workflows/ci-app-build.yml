@@ -39,6 +39,9 @@ jobs:
       run: |
         NODE_ENV=production yarn build
       working-directory: ${{env.working-directory}}
+      env:
+        CI: true
+        SKIP_PREFLIGHT_CHECK: true
     - uses: actions/upload-artifact@master
       with:
         name: app-${{env.PACKAGE_VERSION}}
