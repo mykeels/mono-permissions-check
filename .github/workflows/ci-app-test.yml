@@ -1,0 +1,36 @@
+name: CI App Test
+
+on:
+  pull_request:
+    branches: [ '*' ]
+    paths:
+    - "src/**"
+    - ".github/workflows/ci-app-test.yml"
+    - "tailwind.config.js"
+    - "package.json"
+    - ".env.sample"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: borales/actions-yarn@v2.0.0
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: yarn
+      working-directory: ${{env.working-directory}}
+    - run: yarn test
+      working-directory: ${{env.working-directory}}
+      env:
+        CI: true
