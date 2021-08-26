@@ -14,6 +14,11 @@ export default {
 
 export const Index = () => (
   <QueryClientProvider client={queryClient}>
-    <PermissionWidget getBanks={async () => banks} />
+    <PermissionWidget getBanks={async () =>
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(banks);
+      }, 2000);
+    })} />
   </QueryClientProvider>
 );

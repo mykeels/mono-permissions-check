@@ -1,7 +1,7 @@
 .spinner {
   border-width: 4px;
   border-style: solid;
-  border-color: theme("colors.gray.800");
+  border-color: theme("colors.gray.500");
   border-right-color: transparent !important;
   border-radius: 50%;
   animation: spin 0.5s linear infinite;

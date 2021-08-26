@@ -6,7 +6,11 @@ import React from "react";
 
 /**
  *
- * @param {{ [key: string]: any }} props
+ * @param {object} props
+ * @param {string} props.size
+ * @param {string} props.borderWidth
+ * @param {string} props.borderColor
+ * @param {any} props.className
  * @returns {JSX.Element}
  */
 export const Spinner = ({ size, borderWidth, borderColor, className }) => {
@@ -23,11 +27,11 @@ Spinner.propTypes = {
   size: PropTypes.any,
   borderWidth: PropTypes.any,
   borderColor: PropTypes.any,
-  className: PropTypes.any
+  className: PropTypes.any,
 };
 
 Spinner.defaultProps = {
   size: "1.5rem",
   borderWidth: 3,
-  borderColor: "unset"
+  borderColor: "unset",
 };

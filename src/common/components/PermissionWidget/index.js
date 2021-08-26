@@ -16,7 +16,7 @@ export const PermissionWidget = ({ className, getBanks }) => {
     className
   );
   const [search, setSearch] = useState("");
-  const { data: banks, isLoading } = useQuery(["getBanks"], () =>
+  const { data: banks, isLoading } = useQuery(["getBanks", search], () =>
     getBanks(search)
   );
 

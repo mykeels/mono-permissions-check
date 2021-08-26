@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import magnifySVG from "./assets/images/magnifying-glass.svg";
+import { Spinner } from "../../../Spinner";
 
 /**
  * @param {object} props
@@ -18,7 +19,7 @@ export const PermissionSearch = ({ className, onSearchChange, isLoading }) => {
   return (
     <div className={permissionsClassName}>
       <div className="text-center font-semibold py-4">Choose your bank</div>
-      <div className="border border-white rounded py-2 px-4 bg-m-gray-500 shadow">
+      <div className="border border-white rounded py-2 px-4 bg-m-gray-500 shadow relative">
         <img
           src={magnifySVG}
           className="inline-block p-2 pointer-events-none"
@@ -30,6 +31,9 @@ export const PermissionSearch = ({ className, onSearchChange, isLoading }) => {
           placeholder="Search for your bank"
           onKeyUp={(e) => onSearchChange(e.currentTarget.value)}
         />
+        {isLoading ? (
+          <Spinner className="absolute right-0 top-0 mt-4" borderColor="#FFF" />
+        ) : null}
       </div>
     </div>
   );
@@ -38,7 +42,7 @@ export const PermissionSearch = ({ className, onSearchChange, isLoading }) => {
 PermissionSearch.propTypes = {
   className: PropTypes.any,
   onSearchChange: PropTypes.func,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
 };
 
 PermissionSearch.defaultProps = {
