@@ -6,8 +6,10 @@ import magnifySVG from "./assets/images/magnifying-glass.svg";
 /**
  * @param {object} props
  * @param {any} props.className
+ * @param {(search: string) => Promise<any>} props.onSearchChange
+ * @param {boolean} props.isLoading
  */
-export const PermissionSearch = ({ className }) => {
+export const PermissionSearch = ({ className, onSearchChange, isLoading }) => {
   const permissionsClassName = classnames(
     "bg-m-gray-400 p-2 font-mono",
     className
@@ -17,11 +19,16 @@ export const PermissionSearch = ({ className }) => {
     <div className={permissionsClassName}>
       <div className="text-center font-semibold py-4">Choose your bank</div>
       <div className="border border-white rounded py-2 px-4 bg-m-gray-500 shadow">
-        <img src={magnifySVG} className="inline-block p-2 pointer-events-none" alt="Magnify" />
+        <img
+          src={magnifySVG}
+          className="inline-block p-2 pointer-events-none"
+          alt="Magnify"
+        />
         <input
           type="search"
           className="bg-transparent inline-block p-2 w-5/6 outline-none"
           placeholder="Search for your bank"
+          onKeyUp={(e) => onSearchChange(e.currentTarget.value)}
         />
       </div>
     </div>
@@ -30,4 +37,10 @@ export const PermissionSearch = ({ className }) => {
 
 PermissionSearch.propTypes = {
   className: PropTypes.any,
+  onSearchChange: PropTypes.func,
+  isLoading: PropTypes.bool
+};
+
+PermissionSearch.defaultProps = {
+  onSearchChange: () => {},
 };

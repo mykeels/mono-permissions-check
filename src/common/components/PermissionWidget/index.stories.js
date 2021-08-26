@@ -1,6 +1,10 @@
 import React from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import { PermissionWidget } from ".";
+import { banks } from "../../data/banks";
+
+const queryClient = new QueryClient();
 
 export default {
   title: "PermissionWidget",
@@ -8,4 +12,8 @@ export default {
   decorators: [],
 };
 
-export const Index = () => <PermissionWidget />;
+export const Index = () => (
+  <QueryClientProvider client={queryClient}>
+    <PermissionWidget getBanks={async () => banks} />
+  </QueryClientProvider>
+);
