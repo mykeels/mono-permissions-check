@@ -9,6 +9,7 @@ on:
     - "tailwind.config.js"
     - "package.json"
     - ".env.sample"
+    - "public"
 
 jobs:
   build:
