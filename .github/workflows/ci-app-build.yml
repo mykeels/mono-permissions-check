@@ -38,6 +38,7 @@ jobs:
         CI: true
         SKIP_PREFLIGHT_CHECK: true
         PUBLIC_URL: /mono-permissions-check
+        REACT_APP_API_URL: https://mono-permissions-check-api.herokuapp.com/api/v1
     - uses: actions/upload-artifact@master
       with:
         name: app-${{env.PACKAGE_VERSION}}
