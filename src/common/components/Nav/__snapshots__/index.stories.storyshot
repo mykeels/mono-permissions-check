@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mono/permissions-check Nav Index 1`] = `
+<div
+  className="block w-full bg-m-blue-400 p-12 text-white"
+>
+  <div
+    className="inline-block w-1/2 align-top"
+  >
+    <img
+      alt="Mono Logo"
+      src="logo.svg"
+    />
+  </div>
+  <div
+    className="inline-block w-1/2 align-top text-right"
+  >
+    <a
+      className="relative"
+      href="#/"
+    >
+      <span
+        className="hidden md:inline"
+      >
+        What is a Statement Page?
+      </span>
+      <span
+        className="inline md:hidden"
+      >
+        Help?
+      </span>
+      <img
+        alt="Arrow up right"
+        className="inline pl-3 align-middle mb-1"
+        src="arrow-up-right.svg"
+      />
+    </a>
+  </div>
+</div>
+`;

@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mono/permissions-check BankPermission Collapsed 1`] = `
+<div
+  className="block p-2 font-mono"
+>
+  <div
+    className="block py-2 border-b border-white"
+    onClick={[Function]}
+    role="button"
+  >
+    <div
+      className="inline-block w-5/6 align-top"
+    >
+      <img
+        alt="Bank"
+        className="inline"
+        src="images/banks/zenith.svg"
+      />
+      <span
+        className="px-2 pl-2"
+      >
+        Zenith Bank
+      </span>
+    </div>
+    <div
+      className="inline-block w-1/6 align-top text-right"
+    >
+      <img
+        alt="Expand"
+        className="inline"
+        src="chevron-down.svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`@mono/permissions-check BankPermission Expanded 1`] = `
+<div
+  className="block p-2 font-mono"
+>
+  <div
+    className="block py-2 border-b border-white"
+    onClick={[Function]}
+    role="button"
+  >
+    <div
+      className="inline-block w-5/6 align-top"
+    >
+      <img
+        alt="Bank"
+        className="inline"
+        src="images/banks/gtb.svg"
+      />
+      <span
+        className="px-2 pl-2"
+      >
+        GTBank
+      </span>
+    </div>
+    <div
+      className="inline-block w-1/6 align-top text-right"
+    >
+      <img
+        alt="Collapse"
+        className="inline"
+        src="chevron-up.svg"
+      />
+    </div>
+  </div>
+  <div
+    className="block py-2"
+  >
+    <p
+      className="font-semibold py-2"
+    >
+      Floof will be able to access your:
+    </p>
+    <ul
+      className="list-none"
+    >
+      <li
+        className="list-check py-1"
+      >
+        Account holder named
+      </li>
+      <li
+        className="list-check py-1"
+      >
+        Account type
+      </li>
+      <li
+        className="list-check py-1"
+      >
+        Account transaction history
+      </li>
+      <li
+        className="list-check py-1"
+      >
+        Account balance
+      </li>
+    </ul>
+    <div
+      className="text-right py-2"
+    >
+      <button
+        className="bg-m-blue-700 text-white px-6 py-2 rounded"
+        onClick={[Function]}
+      >
+        More info
+      </button>
+    </div>
+  </div>
+</div>
+`;
