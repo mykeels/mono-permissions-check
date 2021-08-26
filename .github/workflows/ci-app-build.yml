@@ -1,0 +1,49 @@
+name: CI App Build
+
+on:
+  pull_request:
+    branches: [ '*' ]
+    paths:
+    - "src/**"
+    - ".github/workflows/ci-app-build.yml"
+    - "tailwind.config.js"
+    - "package.json"
+    - ".env.sample"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - uses: borales/actions-yarn@v2.3.0
+    - run: yarn
+      working-directory: ${{env.working-directory}}
+    - name: Retrieve package version
+      run: |
+        echo ::set-env name=PACKAGE_VERSION::$(node scripts/version.js)
+      working-directory: ${{env.working-directory}}
+    - run: sudo chown -R $USER:$USER ./node_modules/
+    - name: Build App
+      run: |
+        NODE_ENV=production yarn build
+      working-directory: ${{env.working-directory}}
+      env:
+        CI: true
+        SKIP_PREFLIGHT_CHECK: true
+    - uses: actions/upload-artifact@master
+      with:
+        name: app-${{env.PACKAGE_VERSION}}
+        path: ./build
