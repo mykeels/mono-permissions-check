@@ -1,16 +1,17 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 import { Nav } from "./common/components/Nav";
 import { PermissionWidget } from "./common/components/PermissionWidget";
 import logoSVG from "./assets/images/logo.svg";
 
-function App() {
-  const getBanks = (search) =>
-    fetch(`${process.env.REACT_APP_API_URL}/banks?search=${search}`)
-      .then((res) => res.json())
-      .then((body) => {
-        console.log(body);
-        return body.data;
-      });
-
+/**
+ *
+ * @param {object} props
+ * @param {(search: string) => Promise<import("./common/components/PermissionWidget/components").Bank[]>} props.getBanks
+ * @returns
+ */
+export const App = ({ getBanks }) => {
   return (
     <div className="bg-m-blue-400 min-h-screen bg-robot-image">
       <Nav />
@@ -31,6 +32,18 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
-export default App;
+App.propTypes = {
+  getBanks: PropTypes.func,
+};
+
+App.defaultProps = {
+  getBanks: (search) =>
+    fetch(`${process.env.REACT_APP_API_URL}/banks?search=${search}`)
+      .then((res) => res.json())
+      .then((body) => {
+        console.log(body);
+        return body.data;
+      }),
+};
