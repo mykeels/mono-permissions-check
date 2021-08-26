@@ -14,11 +14,20 @@ export default {
 
 export const Index = () => (
   <QueryClientProvider client={queryClient}>
-    <PermissionWidget getBanks={async () =>
-    new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(banks);
-      }, 2000);
-    })} />
+    <PermissionWidget
+      getBanks={async (search) =>
+        new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(
+              banks.filter((bank) =>
+                search
+                  ? bank.name?.toLowerCase().includes(search?.toLowerCase())
+                  : true
+              )
+            );
+          }, 2000);
+        })
+      }
+    />
   </QueryClientProvider>
 );
