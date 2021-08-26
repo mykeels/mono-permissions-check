@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.57539874.chunk.css",
-    "main.js": "/static/js/main.545a1a8a.chunk.js",
-    "main.js.map": "/static/js/main.545a1a8a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.d1e45081.js",
-    "runtime-main.js.map": "/static/js/runtime-main.d1e45081.js.map",
-    "static/js/2.ed34538a.chunk.js": "/static/js/2.ed34538a.chunk.js",
-    "static/js/2.ed34538a.chunk.js.map": "/static/js/2.ed34538a.chunk.js.map",
-    "static/js/3.a8661c4c.chunk.js": "/static/js/3.a8661c4c.chunk.js",
-    "static/js/3.a8661c4c.chunk.js.map": "/static/js/3.a8661c4c.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.57539874.chunk.css.map": "/static/css/main.57539874.chunk.css.map",
-    "static/js/2.ed34538a.chunk.js.LICENSE.txt": "/static/js/2.ed34538a.chunk.js.LICENSE.txt",
-    "static/media/arrow-up-right.429f28b0.svg": "/static/media/arrow-up-right.429f28b0.svg",
-    "static/media/chevron-down.1fe67428.svg": "/static/media/chevron-down.1fe67428.svg",
-    "static/media/chevron-up.746fbde1.svg": "/static/media/chevron-up.746fbde1.svg",
-    "static/media/logo.f6933016.svg": "/static/media/logo.f6933016.svg",
-    "static/media/magnifying-glass.121c7d4f.svg": "/static/media/magnifying-glass.121c7d4f.svg"
+    "main.css": "mono-permissions-check/static/css/main.57539874.chunk.css",
+    "main.js": "mono-permissions-check/static/js/main.74f4054a.chunk.js",
+    "main.js.map": "mono-permissions-check/static/js/main.74f4054a.chunk.js.map",
+    "runtime-main.js": "mono-permissions-check/static/js/runtime-main.dfcfc23d.js",
+    "runtime-main.js.map": "mono-permissions-check/static/js/runtime-main.dfcfc23d.js.map",
+    "static/js/2.ed34538a.chunk.js": "mono-permissions-check/static/js/2.ed34538a.chunk.js",
+    "static/js/2.ed34538a.chunk.js.map": "mono-permissions-check/static/js/2.ed34538a.chunk.js.map",
+    "static/js/3.a8661c4c.chunk.js": "mono-permissions-check/static/js/3.a8661c4c.chunk.js",
+    "static/js/3.a8661c4c.chunk.js.map": "mono-permissions-check/static/js/3.a8661c4c.chunk.js.map",
+    "index.html": "mono-permissions-check/index.html",
+    "static/css/main.57539874.chunk.css.map": "mono-permissions-check/static/css/main.57539874.chunk.css.map",
+    "static/js/2.ed34538a.chunk.js.LICENSE.txt": "mono-permissions-check/static/js/2.ed34538a.chunk.js.LICENSE.txt",
+    "static/media/arrow-up-right.429f28b0.svg": "mono-permissions-check/static/media/arrow-up-right.429f28b0.svg",
+    "static/media/chevron-down.1fe67428.svg": "mono-permissions-check/static/media/chevron-down.1fe67428.svg",
+    "static/media/chevron-up.746fbde1.svg": "mono-permissions-check/static/media/chevron-up.746fbde1.svg",
+    "static/media/logo.f6933016.svg": "mono-permissions-check/static/media/logo.f6933016.svg",
+    "static/media/magnifying-glass.121c7d4f.svg": "mono-permissions-check/static/media/magnifying-glass.121c7d4f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d1e45081.js",
+    "static/js/runtime-main.dfcfc23d.js",
     "static/js/2.ed34538a.chunk.js",
     "static/css/main.57539874.chunk.css",
-    "static/js/main.545a1a8a.chunk.js"
+    "static/js/main.74f4054a.chunk.js"
   ]
 }
