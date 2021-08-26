@@ -3,13 +3,6 @@ name: CI App Build Storybook
 on:
   pull_request:
     branches: [ '*' ]
-    paths:
-    - "src/**"
-    - ".github/workflows/ci-app-build-storybook.yml"
-    - "tailwind.config.js"
-    - "package.json"
-    - ".env.sample"
-    - "public"
 
 jobs:
   build:
