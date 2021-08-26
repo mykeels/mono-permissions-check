@@ -37,7 +37,7 @@ jobs:
       env:
         CI: true
         SKIP_PREFLIGHT_CHECK: true
-        PUBLIC_URL: mono-permissions-check
+        PUBLIC_URL: /mono-permissions-check
     - uses: actions/upload-artifact@master
       with:
         name: app-${{env.PACKAGE_VERSION}}
