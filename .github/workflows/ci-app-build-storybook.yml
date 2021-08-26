@@ -36,7 +36,7 @@ jobs:
         echo ::set-env name=PACKAGE_VERSION::$(node scripts/version.js)
       working-directory: ${{env.working-directory}}
     - name: Build Storybook
-      run: yarn build-storybook
+      run: sudo yarn build-storybook
       working-directory: ${{env.working-directory}}
     - uses: actions/upload-artifact@master
       with:

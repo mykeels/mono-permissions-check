@@ -35,10 +35,9 @@ jobs:
       run: |
         echo ::set-env name=PACKAGE_VERSION::$(node scripts/version.js)
       working-directory: ${{env.working-directory}}
-    - run: chown -R $USER:$USER ./node_modules/
     - name: Build App
       run: |
-        NODE_ENV=production yarn build
+        sudo yarn build
       working-directory: ${{env.working-directory}}
       env:
         CI: true
